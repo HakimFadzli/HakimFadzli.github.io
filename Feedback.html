@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback page</title>
+</head>
+<body background="images/cloud.jpg">
+<center>
+	<form>
+		<legend>
+		<h1 style="font-family:cursive; font-style: italic; size=30;"><big>Feedback</big></h1>
+		</legend>
+			<p>Bill Gates once said and I quote :</p>
+			<blockquote> 
+			"We all need people who will give us feedback,
+			That's how we improve."
+			</blockquote>
+			<p> Feel free to give a feedback on my website</p>
+			<table>
+			<tr>
+				<td>
+				<label for="Experience">Experience :</label>
+				<select name="experience">
+				 <option value="Excellent">Excellent</option>
+				 <option value="It's Okay">It's Okay</option>
+				 <option value="Could use some work">Could use some work</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<form action="/action_page.php">
+				<td>
+				<label for="fname">First Name : </label>
+				<input type="text"  id="fname" name="first name" size="70" placeholder="First Name"/><br/><br/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<label for="email">Email :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" id="lname" name="last name" size="70" maxlength="4" placeholder="Email"/><br/><br/>
+				</td>
+			</tr>
+				<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<tr>
+				<td align="center">
+				<label for="subject">Comment :</label>	&nbsp;
+				<textarea rows="5" cols="70" placeholder="Message">Message.. </textarea><br/><br/>
+				<button type="submit" form="submitform" onclick="submit()" value="Submit">Send</button>
+				<button type="clear" form="clearform" onclick="clear()" value="clear">Clear</button>
+				</td>
+			</tr>
+			</table>
+				&nbsp;&nbsp;
+			</form>
+				
+				
+
+	</form>
+</center>
+
+<script>
+			
+    function submit(){
+        alert("Feedback Submitted!");
+    }
+    function clear(){
+        alert("Feedback Cleared!");
+        let inputs = document.getElementsByTagName('input');
+        let text = document.getElementsByTagName('textarea');
+        let opt = document.getElementById("five");
+        
+        for (let index = 0; index < inputs.length; index++) {
+            inputs[index].value = '';
+            inputs[index].checked = false;
+        }
+
+        for (let index = 0; index < text.length; index++) {
+            text[index].value = '';
+        }
+        opt.selected = "true";
+    }
+</script>
+
+</body>
+</html>
